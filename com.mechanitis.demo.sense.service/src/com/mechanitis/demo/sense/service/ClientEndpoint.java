@@ -1,5 +1,6 @@
 package com.mechanitis.demo.sense.service;
 
+
 import javax.websocket.*;
 import java.io.IOException;
 import java.net.URI;
@@ -7,7 +8,6 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Flow;
 import java.util.concurrent.atomic.AtomicLong;
-import java.util.function.Function;
 import java.util.logging.Logger;
 
 import static java.lang.String.format;
