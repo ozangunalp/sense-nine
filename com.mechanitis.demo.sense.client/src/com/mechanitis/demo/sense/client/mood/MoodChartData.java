@@ -1,6 +1,5 @@
 package com.mechanitis.demo.sense.client.mood;
 
-import com.mechanitis.demo.sense.service.MessageListener;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.PieChart;
 
