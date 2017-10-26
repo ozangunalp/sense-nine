@@ -1,3 +1,6 @@
 out
-.idea/workspace.xml
 tweetdata60-mins.txt
+
+.gradle
+.idea
+.iml
