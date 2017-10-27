@@ -1,0 +1,65 @@
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.1'
+  }
+}
+
+ext.junitVintageVersion  = '4.12.1'
+ext.junitPlatformVersion = '1.0.1'
+ext.junitJupiterVersion  = '5.0.1'
+ext.slf4jVersion         = '1.7.25'
+ext.moduleName = ''
+
+subprojects {
+  apply plugin: 'java'
+  apply plugin: 'org.junit.platform.gradle.plugin'
+
+  repositories {
+    jcenter()
+    mavenCentral()
+  }
+
+  compileJava {
+    sourceCompatibility = JavaVersion.VERSION_1_9
+    targetCompatibility = JavaVersion.VERSION_1_9
+
+    inputs.property("moduleName", moduleName)
+    doFirst {
+      options.compilerArgs = [
+              '--module-path', classpath.asPath,
+      ]
+      classpath = files()
+    }
+  }
+
+//  compileTestJava {
+//    inputs.property("moduleName", moduleName)
+//    doFirst {
+//      options.compilerArgs = [
+//              '--module-path', classpath.asPath,
+//      ]
+//      classpath = files()
+//    }
+//  }
+
+  dependencies {
+    compile "org.slf4j:slf4j-api:${slf4jVersion}"
+    testCompile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
+    testRuntime("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+
+    // If you also want to support JUnit 3 and JUnit 4 tests
+    testRuntime("org.junit.vintage:junit-vintage-engine:${junitVintageVersion}")
+
+    // Only needed to run tests in an (IntelliJ) IDE(A) that bundles an older version
+    testRuntime("org.junit.platform:junit-platform-launcher:${junitPlatformVersion}")
+  }
+}
+
+wrapper {
+  version '4.3-rc-3'
+  distributionType 'ALL'
+}
+

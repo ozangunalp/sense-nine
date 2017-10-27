@@ -1,0 +1,6 @@
+ext.moduleName = 'com.mechanitis.demo.sense.mood'
+
+dependencies {
+  compile project(':service')
+  compile project(':flow')
+}

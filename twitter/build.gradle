@@ -1,0 +1,6 @@
+ext.moduleName = 'com.mechanitis.demo.sense.twitter'
+
+dependencies {
+  compile project(':service')
+}
+
