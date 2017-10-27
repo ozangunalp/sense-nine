@@ -9,8 +9,7 @@ import java.util.Set;
 import static java.util.Arrays.asList;
 
 class MoodTestData {
-    private static final Set<String> POSSIBLE_MOODS
-            = new HashSet<>(asList("HAPPY", "SAD"));
+    private static final Set<String> POSSIBLE_MOODS = new HashSet<>(asList("HAPPY", "SAD"));
 
     public static void main(String[] args) {
         Random random = new Random();
