@@ -3,4 +3,4 @@ tweetdata60-mins.txt
 
 .gradle
 .idea
-.iml
+*.iml
