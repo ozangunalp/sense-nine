@@ -19,7 +19,7 @@ class CannedTweetsServiceTest {
     @Test
     void shouldMessageClientsWithTweetsReceived() throws Exception {
         // start service
-        CannedTweetsService service = new CannedTweetsService(Paths.get("tweetdata60-mins.txt"));
+        CannedTweetsService service = new CannedTweetsService(Paths.get("..","tweetdata60-mins.txt"));
         executor.submit(service);
 
         // run a client that connects to the server and finishes when it receives a message
