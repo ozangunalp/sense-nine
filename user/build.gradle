@@ -3,4 +3,5 @@ ext.moduleName = 'com.mechanitis.demo.sense.user'
 dependencies {
   compile project(':service')
   compile project(':flow')
+  testCompile project(path:':service', configuration:'testApi')
 }
